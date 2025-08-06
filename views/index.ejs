@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Generate a Joke (Temu Card Against Humanity)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+</head>
+
+<body>
+  <h1>Generate a Joke!</h1>
+    
+  <div class="card">
+    <p class="setup"><%= setup %></p>
+    <p class="punchline"><%= punchline  %></p>
+  </div>
+  <p class="user">
+    
+  </p>
+  <div class="generateButtons">
+    <form method="GET">
+      <input class="random" id="randomize" type="submit" value="Random" formaction="/random">
+    </form>
+    <form method="GET">
+      <input class="random" id="programming" type="submit" value="Programming" formaction="/programming">
+    </form>
+    <form method="GET">
+      <input class="random" id="dark" type="submit" value="Dark" formaction="/dark">
+    </form>
+    <form method="GET">
+      <input class="random" id="pun" type="submit" value="Pun" formaction="/pun">
+    </form>
+  </div>
+</body>
+
+</html>

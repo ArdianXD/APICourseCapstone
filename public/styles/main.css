@@ -1,0 +1,220 @@
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+body {
+  min-height: 100vh;
+  background: #ec025b;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+h1 {
+  color: white;
+  font-family: "Titan One", cursive;
+  margin-bottom: 20px;
+}
+
+.random {
+  border: none;
+  padding: 30px 30px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Titan One", cursive;
+
+  transition: background-color 0.2s ease;
+}
+
+#randomize {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#randomize:hover {
+  background-color: #272727;
+  
+}
+
+#randomize:active {
+  background-color: #272727;
+  transform: scale(0.95);
+}
+
+#programming {
+  background-color: #008cff;
+  color: #ffffff;
+}
+
+#programming:hover {
+  background-color: #2da0ff;
+  
+}
+
+#programming:active {
+  background-color: #2da0ff;
+  transform: scale(0.95);
+}
+
+#dark {
+  background-color: #f70000;
+  color: #ffffff;
+}
+
+#dark:hover {
+  background-color: #ff3636;
+  
+}
+
+#dark:active {
+  background-color: #ff3636;
+  transform: scale(0.95);
+}
+
+#pun {
+  background-color: #ffe96d;
+  color: #ffffff;
+}
+
+#pun:hover {
+  background-color: #fdefa0;
+  
+}
+
+#pun:active {
+  background-color: #fdefa0;
+  transform: scale(0.95);
+}
+
+.generateButtons{
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.generateButtons form{
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .generateButtons {
+    flex-direction: column;
+  }
+  
+  .generateButtons form {
+    margin-bottom: 10px;
+  }
+}
+
+.card {
+  background-color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: rgb(0, 0, 0);
+  font-family: "Oswald", sans-serif;
+}
+
+.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 5px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #000000,
+    #000000 43%,
+    #000000
+  );
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+  opacity: 1;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #000000,
+    #000000 43%,
+    #000000
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+.punchline {
+  display: none;
+}
+
+.card:hover {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  transition: color 1s;
+}
+
+.card:hover .setup {
+  display: none;
+}
+
+.card:hover .punchline {
+  display: inline;
+}
+
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+a {
+  color: #212534;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.user {
+  color: white;
+  font-size: 24px;
+  font-family: "Titan One", cursive;
+}
+
