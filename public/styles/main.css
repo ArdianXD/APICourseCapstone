@@ -17,6 +17,75 @@ h1 {
   margin-bottom: 20px;
 }
 
+.card {
+  background-color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: rgb(0, 0, 0);
+  font-family: "Oswald", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+  opacity: 1;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+.punchline {
+  display: none;
+}
+
+.card:hover {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  transition: color 1s, background-color 0.4s ease;
+}
+
+.card:hover .setup {
+  display: none;
+}
+
+.card:hover .punchline {
+  display: inline;
+}
+
 .random {
   border: none;
   padding: 30px 30px;
@@ -107,87 +176,6 @@ h1 {
     margin-bottom: 10px;
   }
 }
-
-.card {
-  background-color: #ffffff;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: var(--card-width);
-  height: var(--card-height);
-  padding: 3px;
-  position: relative;
-  border-radius: 5px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  font-size: 1.5em;
-  color: rgb(0, 0, 0);
-  font-family: "Oswald", sans-serif;
-}
-
-.card::before {
-  content: "";
-  width: 104%;
-  height: 102%;
-  border-radius: 5px;
-  background-image: linear-gradient(
-    var(--rotate),
-    #000000,
-    #000000 43%,
-    #000000
-  );
-  position: absolute;
-  z-index: -1;
-  top: -1%;
-  left: -2%;
-  animation: spin 2.5s linear infinite;
-  opacity: 1;
-}
-
-.card::after {
-  position: absolute;
-  content: "";
-  top: calc(var(--card-height) / 6);
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 5px;
-  transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 6));
-  background-image: linear-gradient(
-    var(--rotate),
-    #000000,
-    #000000 43%,
-    #000000
-  );
-  opacity: 1;
-  transition: opacity 0.5s;
-  animation: spin 2.5s linear infinite;
-}
-
-.punchline {
-  display: none;
-}
-
-.card:hover {
-  background-color: #000000;
-  color: rgb(255, 255, 255);
-  transition: color 1s;
-}
-
-.card:hover .setup {
-  display: none;
-}
-
-.card:hover .punchline {
-  display: inline;
-}
-
 
 @property --rotate {
   syntax: "<angle>";
